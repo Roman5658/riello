@@ -1,10 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ozen WorkTime — Инструкция</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #111;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 24px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .button {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #2d89ef;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            margin: 12px 0;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .screenshot {
+            width: 100%;
+            border-radius: 12px;
+            background-color: #e2e8f0;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .screenshots {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin: 16px 0;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 20px; }
+            p, .button { font-size: 15px; }
+        }
+    </style>
 </head>
 <body>
-$END$
+
+<div class="container">
+    <h1>Установка Ozen WorkTime</h1>
+    <p>Для установки приложения нажмите кнопку ниже:</p>
+    <a href="https://ozen-worktime.web.app" class="button" target="_blank">Перейти к приложению</a>
+    <p>Или скопируйте ссылку, вставьте ее в браузере перейдите к приложению, затем нажмите <strong>Поделиться</strong> и выберите <strong>Установить на рабочий экран</strong>.</p>
+
+    <button class="button" onclick="copyLink()">Скопировать ссылку</button>
+
+
+    <div class="screenshots">
+        <img src="images/screenshot1.jpg" alt="Скриншот 1" class="screenshot" onclick="openImage(this.src)">
+        <img src="images/screenshot2.jpg" alt="Скриншот 2" class="screenshot" onclick="openImage(this.src)">
+    </div>
+
+    <h1>Группа в WhatsApp</h1>
+    <p>Рекомендуем присоединиться к нашей группе в WhatsApp — иногда там появляется важная информация:</p>
+    <a href="https://chat.whatsapp.com/LAPVJ3bplqTLRuXmxChIgB" class="button" target="_blank">Вступить в группу WhatsApp</a>
+</div>
+
+<div class="overlay" id="overlay">
+    <span class="close-button" onclick="closeImage()">×</span>
+    <img id="overlay-img" src="" alt="Просмотр">
+</div>
+
+<script>
+    function openImage(src) {
+        document.getElementById('overlay-img').src = src;
+        document.getElementById('overlay').style.display = 'flex';
+    }
+
+    function closeImage() {
+        document.getElementById('overlay').style.display = 'none';
+    }
+
+    function copyLink() {
+        const text = 'https://ozen-worktime.web.app';
+        navigator.clipboard.writeText(text).then(() => {
+            alert('Ссылка скопирована!');
+        }).catch(() => {
+            alert('Ошибка при копировании');
+        });
+    }
+</script>
+
 </body>
 </html>
