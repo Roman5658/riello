@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ozen WorkTime — Инструкция</title>
+    <title>Ozen WorkTime — Инструкция / Instrukcja</title>
     <style>
         body {
             margin: 0;
@@ -17,7 +17,7 @@
         }
 
         .container {
-            max-width: 500px;
+            max-width: 800px;
             width: 100%;
             background: white;
             border-radius: 16px;
@@ -31,19 +31,31 @@
             margin-bottom: 16px;
             background: darkgray;
             border-radius: 15px;
+            padding: 8px;
+        }
 
+        .lang-table {
+            width: 100%;
+            display: table;
+            table-layout: fixed;
+            border-spacing: 16px;
+        }
+
+        .lang-col {
+            display: table-cell;
+            vertical-align: top;
+            width: 50%;
         }
 
         p {
             font-size: 16px;
-text-align: center;
-            margin: 12px auto 12px auto;
+            margin: 12px 0;
         }
 
         .button {
             display: block;
             width: 90%;
-            margin: 0 auto;
+            margin: 12px auto;
             text-align: center;
             background: #2d89ef;
             color: white;
@@ -51,7 +63,6 @@ text-align: center;
             border: none;
             border-radius: 10px;
             font-size: 16px;
-
             text-decoration: none;
             cursor: pointer;
         }
@@ -60,7 +71,6 @@ text-align: center;
             width: 100%;
             border-radius: 12px;
             background-color: #e2e8f0;
-
             cursor: pointer;
             height: 450px;
         }
@@ -70,7 +80,6 @@ text-align: center;
             flex-direction: column;
             gap: 12px;
             margin: 16px 0;
-
         }
 
         .overlay {
@@ -101,43 +110,81 @@ text-align: center;
             cursor: pointer;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 20px; }
-            p, .button { font-size: 15px; }
+        @media (max-width: 700px) {
+            .lang-table {
+                display: block;
+            }
+
+            .lang-col {
+                display: block;
+                width: 100%;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            p, .button {
+                font-size: 15px;
+            }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Установка Ozen WorkTime</h1>
-    <p>Для установки приложения нажмите кнопку ниже:
-        затем нажмите <strong>Поделиться</strong> и выберите <strong>Установить на рабочий экран</strong></p>
-    <a href="https://ozen-worktime.web.app" class="button" target="_blank">Перейти к приложению</a>
-    <p>Или скопируйте ссылку, вставьте ее в браузере перейдите к приложению, затем нажмите <strong>Поделиться</strong> и выберите <strong>Установить на рабочий экран</strong>.</p>
+    <h1>Установка / Instalacja Ozen WorkTime</h1>
 
-    <button class="button" onclick="copyLink()">Скопировать ссылку</button>
+    <div class="lang-table">
+        <div class="lang-col">
+            <h3>🇷🇺 Русский</h3>
+            <p>Для установки приложения нажмите кнопку ниже:</p>
+            <p>Затем нажмите <strong>Поделиться</strong> и выберите <strong>Установить на рабочий экран</strong>.</p>
+            <p>Или скопируйте ссылку, вставьте её в браузер и перейдите к приложению.</p>
+        </div>
 
-    <h1>Группа в WhatsApp</h1>
-    <p>Рекомендуем присоединиться к нашей группе в WhatsApp — иногда там появляется важная информация:</p>
-    <a href="https://chat.whatsapp.com/LAPVJ3bplqTLRuXmxChIgB" class="button" target="_blank">Вступить в группу WhatsApp</a>
+        <div class="lang-col">
+            <h3>🇵🇱 Polski</h3>
+            <p>Aby zainstalować aplikację, naciśnij przycisk poniżej:</p>
+            <p>Następnie kliknij <strong>Udostępnij</strong> i wybierz <strong>Dodaj do ekranu głównego</strong>.</p>
+            <p>Lub skopiuj link, wklej go do przeglądarki i przejdź do aplikacji.</p>
+        </div>
+    </div>
 
+    <a href="https://ozen-worktime.web.app" class="button" target="_blank">
+        Перейти к приложению / Przejdź do aplikacji
+    </a>
+
+    <button class="button" onclick="copyLink()">Скопировать ссылку / Skopiuj link</button>
+
+    <h1>Группа в WhatsApp / Grupa WhatsApp</h1>
+
+    <div class="lang-table">
+        <div class="lang-col">
+            <h3>🇷🇺 Русский</h3>
+            <p>Рекомендуем присоединиться к нашей группе — там появляется важная информация.</p>
+        </div>
+        <div class="lang-col">
+            <h3>🇵🇱 Polski</h3>
+            <p>Zalecamy dołączenie do naszej grupy — pojawiają się tam ważne informacje.</p>
+        </div>
+    </div>
+
+    <a href="https://chat.whatsapp.com/LAPVJ3bplqTLRuXmxChIgB" class="button" target="_blank">
+        Вступить в группу / Dołącz do grupy
+    </a>
 
     <div class="screenshots">
         <video class="screenshot" autoplay muted loop playsinline>
             <source src="project/videos/demo1.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео.
+            Ваш браузер не поддерживает видео / Twoja przeglądarka nie obsługuje wideo.
         </video>
-
     </div>
-
-
-
 </div>
 
 <div class="overlay" id="overlay">
     <span class="close-button" onclick="closeImage()">×</span>
-    <img id="overlay-img" src="" alt="Просмотр">
+    <img id="overlay-img" src="" alt="Просмотр / Podgląd">
 </div>
 
 <script>
@@ -153,9 +200,9 @@ text-align: center;
     function copyLink() {
         const text = 'https://ozen-worktime.web.app';
         navigator.clipboard.writeText(text).then(() => {
-            alert('Ссылка скопирована!');
+            alert('Ссылка скопирована! / Link został skopiowany!');
         }).catch(() => {
-            alert('Ошибка при копировании');
+            alert('Ошибка при копировании / Błąd podczas kopiowania');
         });
     }
 </script>
